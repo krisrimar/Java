@@ -1,20 +1,68 @@
-/** The main class for printing the string "Hello World" */
+class MonthApp {
 
-/* the above comment is a docummentation and will be handled by the javadoc when there will be one */
+  //Returns the number of the month if passed the name of the month
+  public static int getMonthNumber(String month) {
 
-//This is the class definition
-//Each application begins with a class definition
-class HelloWorld
-{
-  //The main method
-  //In Java, every application should contain a main method
-  //The main methods signature always remains the same
-  //Just like in C++ we have the int main()
-  public static void main(String args[]) //the argument of this function can be named in any way you want, but args or argv is preferred
-  //Each string in the array above is called a command line argument
-  //They allow the user to affect the operation of an application without re-compiling it
-  {
-    System.out.println("Hello World!"); //prints "Hello World!"
-    //This uses the System class from the core library
+    int monthNumber = 0;
+
+    if(month == null) {
+      return monthNumber;
+    }
+
+    switch (month.toLowerCase()) {
+      case "january":
+        monthNumber = 1;
+        break;
+      case "february":
+        monthNumber = 2;
+        break;
+      case "march":
+        monthNumber = 3;
+        break;
+      case "april":
+        monthNumber = 4;
+        break;
+      case "may":
+        monthNumber = 5;
+        break;
+      case "june":
+        monthNumber = 6;
+        break;
+      case "july":
+        monthNumber = 7;
+        break;
+      case "august":
+        monthNumber = 8;
+        break;
+      case "september":
+        monthNumber = 9;
+        break;
+      case "october":
+        monthNumber = 10;
+        break;
+      case "november":
+        monthNumber = 11;
+        break;
+      case "december":
+        monthNumber = 12;
+        break;
+      default:
+        monthNumber = 0;
+        break;
+    }
+
+    return monthNumber;
+
+  }
+
+  //Main function
+  public static void main(String args[]) {
+
+    String month = "April";
+
+    int returnedNumberOfMonth = MonthApp.getMonthNumber(month);
+
+    System.out.println("The month you are looking for has number " + returnedNumberOfMonth);
+
   }
 }
